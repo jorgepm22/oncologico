@@ -3367,7 +3367,7 @@ function jstreeCtrl($scope) {
         {
             "id": "ajson31",
             "parent": "ajson1",
-            "text": "login.html",
+            "text": "login.component.html",
             "type":"html",
             "__uiNodeId":31
         }
