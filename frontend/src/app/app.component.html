@@ -1,6 +1,9 @@
 <div class="container-fluid">
   <div>
-    <div>
+    <div *ngIf="userSaved">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div *ngIf="!userSaved">
       <app-login></app-login>
     </div>
   </div>
