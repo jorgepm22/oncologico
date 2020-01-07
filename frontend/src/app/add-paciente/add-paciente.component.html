@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.8/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Aug 2018 01:31:31 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Basic Form</title>
+
+    
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div >
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Formulario para el paciente</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a [routerLink]="['/']">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Agregar Paciente</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>Datos del Paciente</h5>
+                        </div>
+                        <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group">
+                                            <input type="text" [(ngModel)]="paciente.ci" class="form-control input-sm" name="cedula" placeholder="C.I">
+                                        </div> 
+                                        <div class="form-group">
+                                            <input type="text" [(ngModel)]="paciente.nombre1" class="form-control input-sm" name="nombre1" placeholder="Primer Nombre">	
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-sm" [(ngModel)]="paciente.nombre2" name="nombre2" placeholder="Segundo Nombre">
+                                        </div> 
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-sm" [(ngModel)]="paciente.apellido1" name="apellido1" placeholder="Primer Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-3">
+                                    <div class="form-group">
+                                            <input type="text" class="form-control input-sm" [(ngModel)]="paciente.apellido2" name="apellido2" placeholder="Segundo Apellido">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-sm" [(ngModel)]="paciente.tlf" name="telefono" placeholder="Teléfono">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group">
+                                            <input type="text" [(ngModel)]="paciente.lic" class="form-control input-sm" name="lic" placeholder="LIC">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group" id="data_1">
+                                            <h4>Fecha Nacimiento</h4>
+                                            <div class="input-group date">
+                                                <input class="input-group-addon" [(ngModel)]="paciente.fecha_nac" matInput readonly [matDatepicker]="picker" placeholder="Selecciona una fecha">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group">
+                                            <h4>Procedencia</h4>
+                                            <textarea class="form-control" style="resize:none;" [(ngModel)]="paciente.procedencia" rows="2" name="procedencia"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-3">
+                                        <div class="form-group">
+                                            <h4>Referencia</h4>
+                                            <textarea class="form-control" [(ngModel)]="paciente.referencia" style="resize:none;" rows="2" name="referencia"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <h2>Antecedentes Familiares</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <h4>Madre</h4>
+                                                <textarea class="form-control" style="resize:none;" rows="2" [(ngModel)]="paciente.antec_madre" name="antemadre"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <h4>Padre</h4>
+                                                <textarea class="form-control" style="resize:none;" [(ngModel)]="paciente.antec_padre" rows="2" name="antepadre"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <h4>Hermanos</h4>
+                                                <textarea class="form-control" style="resize:none;" [(ngModel)]="paciente.antec_otros" rows="2" name="anteherm"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <h2>Antecedentes Prenatales</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" [(ngModel)]="paciente.N_emb" name="nembarazo" placeholder="N° Embarazo">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type=" text" class="form-control" [(ngModel)]="paciente.semanas" name="semanas" placeholder="Semanas">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" [(ngModel)]="paciente.peso_nac" name="peso_nac" placeholder="Peso al nacer">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                    <input type="text" class="form-control" [(ngModel)]="paciente.talla_nac" name="talla_nac" placeholder="Talla al nacer">
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <label class="font-noraml">Complicaciones Maternas:</label>
+                                                <textarea class="form-control" [(ngModel)]="paciente.comp_mat" style="resize:none;" rows="2" name="comp_mat">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-3">
+                                            <div class="form-group">
+                                                <label class="font-noraml">Complicaciones al Nacer:</label>
+                                                <textarea class="form-control" [(ngModel)]="paciente.comp_nac" style="resize:none;" rows="2" name="comp_nac">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2">
+                                            <div class="form-group">
+                                                    <input type="hidden" name="control" value="false">
+                                                    <label> <input [(ngModel)]="paciente.emb_cont" type="checkbox" name="control" value="true">controlado</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2">
+                                            <div class="form-group">
+                                                    <input type="hidden" name="cesar" value="false">
+                                                    <label> <input [(ngModel)]="paciente.emb_cesar" type="checkbox" name="cesar" value="true">Cesárea</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 col-sm-offset-2">
+                                        <button (click)="cancel()" class="btn btn-white btn-sm" type="submit">Cancelar</button>
+                                        
+                                    </div>
+                                    <div class="col-sm-6 col-sm-offset-2">
+                                        <button (click)="submit()" class="btn btn-primary pull-right btn-sm" type="submit">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        </div>
+        </div>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
+</body>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.8/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Aug 2018 01:31:33 GMT -->
+</html>

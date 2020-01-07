@@ -10,28 +10,51 @@ import { LoginService } from './login/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './common/User.service';
 import { RouterModule, Routes } from '@angular/router';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { AddPacienteComponent } from './add-paciente/add-paciente.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { PacienteService } from './add-paciente/add-paciente.service';
+import { PacienteListaService } from './pacientes/paciente.service';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material'; 
 
 const rutas: Routes = [
-  { path: 'home', component: SidenavComponent },
   { path: 'login', component: LoginComponent },
- { path: '',   redirectTo: 'home', pathMatch: 'full' },
+  { path: 'addPaciente', component: AddPacienteComponent },
+  { path: 'pacientes', component: PacientesComponent },
+ { path: '',   redirectTo: 'pacientes', pathMatch: 'full' },
 ];
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SidenavComponent
+    SidenavComponent,
+    PacientesComponent,
+    AddPacienteComponent
   ],
   imports: [
+    MatDatepickerModule,
+    MatNativeDateModule, 
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
     RouterModule.forRoot(
       rutas
-    )
+    ),
+    BrowserAnimationsModule
   ],
-  providers: [ LoginService, UserService ],
+  providers: [ MatDatepickerModule, LoginService, UserService, PacienteService, PacienteListaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

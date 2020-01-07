@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/css/bootstrap.min.css",
               "src/font-awesome/css/font-awesome.css",
               "src/css/plugins/toastr/toastr.min.css",
+              "src/css/plugins/iCheck/custom.css",
+              "src/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
               "src/css/animate.css",
               "src/css/style.css"
             ],
@@ -132,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "frontend"
 }
