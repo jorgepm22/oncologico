@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div>
     <div *ngIf="userSaved">
-      <app-sidenav></app-sidenav>
+      <router-outlet></router-outlet>
     </div>
     <div *ngIf="!userSaved">
       <app-login></app-login>

@@ -20,11 +20,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    const env = this;
     this.loginService.login(this.email, this.password).subscribe( 
       res => {
         let u: User = {username: this.email, password:this.password, token: res.toString()};        
         this.userService.setUserLoggedIn(u);
-        this.navigate();
+        env.navigate();
       },
       error => {
         console.error(error);
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/home');
+    this.router.navigate(['/home']);
   }
   
 }

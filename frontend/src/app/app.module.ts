@@ -7,9 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LoginService } from './login/login.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './common/User.service';
+import { RouterModule, Routes } from '@angular/router';
 
+const rutas: Routes = [
+  { path: 'home', component: SidenavComponent },
+  { path: 'login', component: LoginComponent },
+ { path: '',   redirectTo: 'home', pathMatch: 'full' },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +27,9 @@ import { UserService } from './common/User.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot(
+      rutas
+    )
   ],
   providers: [ LoginService, UserService ],
   bootstrap: [AppComponent]

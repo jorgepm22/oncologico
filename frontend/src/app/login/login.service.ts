@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class LoginService {
@@ -7,11 +7,11 @@ export class LoginService {
   constructor(private http: HttpClient) {
   }
 
-  login(username:string, password:string) {
-    return this.http.post('https://reqres.in/api/login', {
-      email: username,
-      password: password,     
-    });     
+  login(user:string, pass:string) {
+    const params = new HttpParams()
+    .set('username', user)
+    .set('password', pass);    
+    return this.http.post('http://localhost:3000/api/auth?username='+user+'&password='+pass,null);    
   }
 
 }
